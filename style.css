@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Sofadi One", system-ui;
+}
+
+header {
+    background-image: url(./image/3aba3cf0-b087-4133-b504-5898c47d14bb.webp);
+    height: 85vh;
+    margin: 0;
+}
+
+.navbar {
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+}
+
+#navbarNav {
+    max-width: 25vw;
+}
+
+.navbar-brand {
+    max-height: 100%;
+}
+
+.navbar-brand img{
+    max-height: 40px;
+}
+
+header section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    z-index: 0;
+    margin: 0;
+}
+
+.container-fluid {
+    padding: 5px;
+    justify-content: space-around;
+}
+
+#opening_status {
+    font-size: 1rem;
+    color: #b99768;
+    text-shadow: none;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 10vh;
+    font-family: "Sofadi One", system-ui;
+    text-align: center;
+}
+
+header p {
+    font-size: 5vh;
+    font-family: "Sofadi One", system-ui;
+    text-align: center;
+}
+
+#menu {
+    padding-top: 0vh;
+    background-color: lightgrey ;
+    padding: 2.5vh 1vh;
+}
+
+.menu_btn {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 2.5vh 0;
+}
+
+
+.menu_btn button {
+    height: 10vh;
+    min-width: 140px;
+    max-width: 160px;
+    border: 0;
+    background-color: lightgray;
+    font-size: 4vh;
+    color: #b99768;
+    border-radius: 50%;
+    padding: 2vh;
+}
+
+.menu_btn button:hover {
+    background-color: rgb(195, 194, 194);
+    color: #b99768;
+    transform: scale(1.05);
+}
+
+.menu_btn .btn_active {
+    background-color: rgb(195, 194, 194);
+    color: #b99768;
+    transform: scale(1.05);
+}
+
+.drink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.drink img {
+    max-height: 40vh;
+    max-width: 60vw;
+    border-radius: 50%;
+}
+
+.menu_softdrink {
+    display: none;
+}
+
+#about {
+    background-color: gray;
+    padding: 6vh 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about p {
+    text-align: center;
+}
+
+#about img {
+    margin: 3vh auto;
+    width: 80vw;
+    height: auto;
+}
+
+#adress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6vh 4vh;
+    background-color: lightgrey;
+}
+
+.opening_time {
+    line-height: 1;
+}
+
+#adress button {
+    border: 0;
+    padding: 1rem;
+    border-radius: 5px;
+    color: #b99768;
+}
+
+#adress button:hover {
+    background-color: rgb(195, 194, 194);
+    color: #b99768;
+    transform: scale(1.05);
+}
+
+@media only screen and (max-width: 370px) {
+
+#opening_status {
+    font-size: 0.8rem;
+}
+    
+}

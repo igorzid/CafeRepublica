@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Republika</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>  
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#home"><img src="./image/Screenshot_1.png" alt="logo"></a>
+                <p id="opening_status"></p>               
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Domů</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#menu">Nápoje</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">O nás</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#adress">Kde nás najdete</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section>
+            <h1 class="mb-3 text-light">Kafe Republika</h1>
+            <p class="text-light">máme rádi kafe</p>
+        </section>
+    </header>
+    <section id="menu">
+        <div class="menu_btn">
+            <button type="button" class="btn_active" onclick="location.href='#menu';showSection('menu_cafe')">Kávy</button>
+            <button type="button" onclick="location.href='#menu';showSection('menu_softdrink')">Nealko</button>
+        </div>
+        <section class="menu_cafe">
+            <div class="drink">
+                <img src="./image/Espresso.png" alt="Espresso">
+                <p>Espresso</p>
+            </div>
+            <div class="drink">
+                <img src="./image/Cappuccino.png" alt="Cappuccino">
+                <p>Cappuccino</p>
+            </div>
+            <div class="drink">
+                <img src="./image/CaffeLatte.png" alt="Caffè latte">
+                <p>Caffè latte</p>
+            </div>
+            <div class="drink">
+                <img src="./image/LatteMacchiato.png" alt="Latte macchiato">
+                <p>Latte macchiato</p>
+            </div>
+            <div class="drink">
+                <img src="./image/Americano.png" alt="Americano">
+                <p>Americano</p>
+            </div>
+        </section>
+        <section class="menu_softdrink">
+            <div class="drink">
+                <img src="./image/Cola.png" alt="Cola">
+                <p>Cola</p>
+            </div>
+            <div class="drink">
+                <img src="./image/Birell.png" alt="Birell">
+                <p>Birell</p>
+            </div>
+        </section>
+    </section>
+    <section id="about">
+        <h1>O nás</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aperiam amet repudiandae consequatur at voluptatibus sit, non ut sunt adipisci necessitatibus consectetur corrupti incidunt quaerat quasi laboriosam nobis. Sunt, nesciunt!</p>
+        <img src="./image/Kavovar.png" alt="">
+    </section>
+    <section id="adress">
+        <h1>Kontakt</h1>
+        <p>Jiráskova 1361 <br>516 01 Rychnov nad Kněžnou <br>Telefon: 123456789</p>
+        <h1>Otevírací doba</h1>
+        <p class="opening_time">
+            Po 10:00 - 18:00 <br>
+            Út 10:00 - 18:00 <br>
+            St 10:00 - 18:00 <br>
+            Čt 10:00 - 18:00 <br>
+            Pá 10:00 - 18:00 <br>
+            So Zavřeno <br>
+            Ne Zavřeno <br>
+        </p>
+        <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=50.159230, 16.274301')">
+            Navigace do Kafe Republika
+        </button>
+     
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
