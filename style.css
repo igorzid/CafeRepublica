@@ -8,7 +8,7 @@
 
 header {
     background-image: url(./image/3aba3cf0-b087-4133-b504-5898c47d14bb.webp);
-    height: 85vh;
+    height: 110vh;
     margin: 0;
 }
 
@@ -27,7 +27,7 @@ header {
 }
 
 .navbar-brand img{
-    max-height: 40px;
+    max-height: 60px;
 }
 
 header section {
@@ -35,7 +35,7 @@ header section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 85vh;
+    height: 110vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -44,6 +44,16 @@ header section {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     z-index: 0;
     margin: 0;
+}
+
+header section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10vh; /* Only affects the bottom 10 pixels */
+    background: linear-gradient(to bottom, rgba(66, 66, 66, 0), rgba(66, 66, 66, 1));
 }
 
 .container-fluid {
@@ -59,21 +69,34 @@ header section {
 }
 
 header h1 {
-    font-size: 10vh;
+    font-size: 8vh;
+    font-family: "Sofadi One", system-ui;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header p {
+    font-size: 4vh;
     font-family: "Sofadi One", system-ui;
     text-align: center;
 }
 
-header p {
-    font-size: 5vh;
-    font-family: "Sofadi One", system-ui;
-    text-align: center;
+.transition {
+    margin-top: -10vh;
+    height: 10vh;
+    background: linear-gradient(to bottom, rgba(66, 66, 66, 0), rgba(66, 66, 66, 1));
 }
 
 #menu {
     padding-top: 0vh;
-    background-color: lightgrey ;
+    background-color: rgb(66, 66, 66) ;
     padding: 2.5vh 1vh;
+}
+
+#menu p {
+    color: lightgray;
+    font-size: 15px;
+    margin:0 10px 0 10px;
 }
 
 .menu_btn {
@@ -88,21 +111,18 @@ header p {
     min-width: 140px;
     max-width: 160px;
     border: 0;
-    background-color: lightgray;
     font-size: 4vh;
     color: #b99768;
-    border-radius: 50%;
     padding: 2vh;
+    background-color: rgb(66, 66, 66);
 }
 
 .menu_btn button:hover {
-    background-color: rgb(195, 194, 194);
     color: #b99768;
     transform: scale(1.05);
 }
 
 .menu_btn .btn_active {
-    background-color: rgb(195, 194, 194);
     color: #b99768;
     transform: scale(1.05);
 }
@@ -115,9 +135,13 @@ header p {
 }
 
 .drink img {
-    max-height: 40vh;
-    max-width: 60vw;
-    border-radius: 50%;
+    width: 50vw;
+    height: 50vw;
+    max-height: 350px;
+    max-width: 350px;
+    object-fit: cover; /* Ensures the image covers the circle */
+    mask-image: radial-gradient(circle, rgba(195, 194, 194, 1) 62%, rgba(195, 194, 194, 0) 70%);
+    -webkit-mask-image: radial-gradient(circle, rgba(195, 194, 194, 1) 62%, rgba(195, 194, 194, 0) 70%);
 }
 
 .menu_softdrink {
