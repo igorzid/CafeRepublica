@@ -108,7 +108,7 @@ header p {
 
 .menu_btn button {
     height: 10vh;
-    min-width: 140px;
+    min-width: 120px;
     max-width: 160px;
     border: 0;
     font-size: 4vh;
@@ -125,6 +125,7 @@ header p {
 .menu_btn .btn_active {
     color: #b99768;
     transform: scale(1.05);
+    text-decoration: underline;
 }
 
 .drink {
@@ -145,6 +146,10 @@ header p {
 }
 
 .menu_softdrink {
+    display: none;
+}
+
+.menu_gin {
     display: none;
 }
 
