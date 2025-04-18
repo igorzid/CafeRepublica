@@ -8,38 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>  
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#home"><img src="./image/CafeRepublica_logo_test.webp" alt="logo"></a>
-                <p id="opening_status"></p>               
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <header id="home">  
+        <nav class="navbar">
+            <div class="logo">Cafe Republika</div>
+            <div class="adress_container">
+                <a href="#adress"><div id="opening_status"></div></a>
+                <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=50.159230, 16.274301')">
+                    <img src="./image/gps_icon.webp" alt="navigace">
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto ">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#home">Domů</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#menu">Nápoje</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">O nás</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#adress">Kde nás najdete</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Domů</a></li>
+                <li><a href="#about">O nás</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#adress">Kontakt</a></li>
+            </ul>
         </nav>
         <section>
             <h1 class="text-light">Kafe Republica</h1>
             <p class="text-light">život je krátký <br> na to nepít výběrovou kávu</p>
         </section>
     </header>
-    <section class="transition"></section>
     <section id="menu">
         <div class="menu_btn">
             <button type="button" class="btn_active" onclick="location.href='#menu';showSection('menu_cafe')">Káva</button>
@@ -48,24 +37,29 @@
         </div>
         <section class="menu_cafe">
             <div class="drink">
-                <p>Espresso</p>
                 <img src="./image/Espresso.png" alt="Espresso">
-            </div>
-            <div class="drink">
-                <img src="./image/Cappuccino.png" alt="Cappuccino">
-                <p>Cappuccino</p>
-            </div>
-            <div class="drink">
-                <img src="./image/CaffeLatte.png" alt="Caffè latte">
-                <p>Caffè latte</p>
-            </div>
-            <div class="drink">
-                <img src="./image/LatteMacchiato.png" alt="Latte macchiato">
-                <p>Latte macchiato</p>
+                <p>Espresso</p>
+                <p>Intenzivní, silné a plné chuti. Malý šálek, velký zážitek.</p> 
             </div>
             <div class="drink">
                 <img src="./image/Americano_zrnko.webp" alt="Americano">
                 <p>Americano</p>
+                <p>Espresso zjemněné horkou vodou. Jemnější síla s plnou chutí – ideální pro ty, kdo chtějí pít déle a cítit vše.</p>
+            </div>
+            <div class="drink">
+                <img src="./image/Cappuccino.png" alt="Cappuccino">
+                <p>Cappuccino</p>
+                <p>Hedvábná pěna, krémová chuť a dokonalá rovnováha kávy a mléka.</p>
+            </div>
+            <div class="drink">
+                <img src="./image/CaffeLatte.png" alt="Caffè latte">
+                <p>Caffè latte</p>
+                <p>Jemné espresso v objetí horkého mléka – hladivý start do každého dne.</p>
+            </div>
+            <div class="drink">
+                <img src="./image/LatteMacchiato.png" alt="Latte macchiato">
+                <p>Latte macchiato</p>
+                <p>Vrstvená harmonie mléka a espressa. Jemné, elegantní a vizuálně neodolatelné.</p>
             </div>
             <p>Výběrová káva: Kvalita, Udržitelnost a Jedinečný Zážitek <br>
                 <br>
@@ -100,29 +94,31 @@
             </div>
         </section>
     </section>
-    <section id="about">
-        <h1>O nás</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aperiam amet repudiandae consequatur at voluptatibus sit, non ut sunt adipisci necessitatibus consectetur corrupti incidunt quaerat quasi laboriosam nobis. Sunt, nesciunt!</p>
-        <img src="./image/Kavovar.png" alt="">
-    </section>
-    <section id="adress">
-        <h1>Kontakt</h1>
-        <p>Jiráskova 1361 <br>516 01 Rychnov nad Kněžnou <br>Telefon: 123456789</p>
-        <h1>Otevírací doba</h1>
-        <p class="opening_time">
-            Po 10:00 - 18:00 <br>
-            Út 10:00 - 18:00 <br>
-            St 10:00 - 18:00 <br>
-            Čt 10:00 - 18:00 <br>
-            Pá 10:00 - 18:00 <br>
-            So Zavřeno <br>
-            Ne Zavřeno <br>
-        </p>
-        <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=50.159230, 16.274301')">
-            Navigace do Kafe Republika
-        </button>
-     
-    </section>
+    <div class="footer_container">
+        <section id="about">
+            <h1>O nás</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aperiam amet repudiandae consequatur at voluptatibus sit, non ut sunt adipisci necessitatibus consectetur corrupti incidunt quaerat quasi laboriosam nobis. Sunt, nesciunt!</p>
+            <img src="./image/Kavovar.png" alt="">
+        </section>
+        <section id="adress">
+            <h1>Kontakt</h1>
+            <p>Jiráskova 1361 <br>516 01 Rychnov nad Kněžnou <br>Telefon: 123456789</p>
+            <h1>Otevírací doba</h1>
+            <p class="opening_time">
+                Po 10:00 - 18:00 <br>
+                Út 10:00 - 18:00 <br>
+                St 10:00 - 18:00 <br>
+                Čt 10:00 - 18:00 <br>
+                Pá 10:00 - 18:00 <br>
+                So Zavřeno <br>
+                Ne Zavřeno <br>
+            </p>
+            <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=50.159230, 16.274301')">
+                Navigace do Kafe Republika
+            </button>
+        
+        </section>
+    </div>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./script.js"></script>
 </body>

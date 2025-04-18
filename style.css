@@ -6,36 +6,27 @@
     font-family: "Sofadi One", system-ui;
 }
 
+body {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 header {
     background-image: url(./image/3aba3cf0-b087-4133-b504-5898c47d14bb.webp);
-    height: 110vh;
-    margin: 0;
+    height: 100vh;
 }
 
-.navbar {
-    opacity: 0.8;
-    position: relative;
-    z-index: 1;
-}
-
-#navbarNav {
-    max-width: 25vw;
-}
-
-.navbar-brand {
-    max-height: 100%;
-}
-
-.navbar-brand img{
-    max-height: 60px;
-}
 
 header section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 110vh;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -46,38 +37,92 @@ header section {
     margin: 0;
 }
 
-header section::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 10vh; /* Only affects the bottom 10 pixels */
-    background: linear-gradient(to bottom, rgba(66, 66, 66, 0), rgba(66, 66, 66, 1));
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
 }
 
-.container-fluid {
-    padding: 5px;
-    justify-content: space-around;
+.navbar.hidden {
+    transform: translateY(-100%);
+  }
+
+.logo {
+    filter: brightness(0.9) contrast(1.1); /* subtle polish to logo on light bg */
+}
+
+.adress_container {
+    display: flex;
+    gap: 2rem;
 }
 
 #opening_status {
-    font-size: 1rem;
-    color: #b99768;
-    text-shadow: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    border-radius: 10px;
+    padding: 1vh 2vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#opening_status:hover {
+    scale: 1.02;
+}
+
+.navbar button {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar button img {
+    height: 30px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem 3rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 0;
     margin: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    height: 100%;
+}
+
+.nav-links li:hover {
+    text-decoration: underline;
+}
+
+header section {
+    padding: 0 1vw;
 }
 
 header h1 {
     font-size: 8vh;
-    font-family: "Sofadi One", system-ui;
     text-align: center;
     margin-bottom: 40px;
 }
 
 header p {
     font-size: 4vh;
-    font-family: "Sofadi One", system-ui;
     text-align: center;
 }
 
@@ -85,64 +130,6 @@ header p {
     margin-top: -10vh;
     height: 10vh;
     background: linear-gradient(to bottom, rgba(66, 66, 66, 0), rgba(66, 66, 66, 1));
-}
-
-#menu {
-    padding-top: 0vh;
-    background-color: rgb(66, 66, 66) ;
-    padding: 2.5vh 1vh;
-}
-
-#menu p {
-    color: lightgray;
-    font-size: 15px;
-    margin:0 10px 0 10px;
-}
-
-.menu_btn {
-    display: flex;
-    justify-content: space-around;
-    margin: 0 0 2.5vh 0;
-}
-
-
-.menu_btn button {
-    height: 10vh;
-    min-width: 120px;
-    max-width: 160px;
-    border: 0;
-    font-size: 4vh;
-    color: #b99768;
-    padding: 2vh;
-    background-color: rgb(66, 66, 66);
-}
-
-.menu_btn button:hover {
-    color: #b99768;
-    transform: scale(1.05);
-}
-
-.menu_btn .btn_active {
-    color: #b99768;
-    transform: scale(1.05);
-    text-decoration: underline;
-}
-
-.drink {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.drink img {
-    width: 50vw;
-    height: 50vw;
-    max-height: 350px;
-    max-width: 350px;
-    object-fit: cover; /* Ensures the image covers the circle */
-    mask-image: radial-gradient(circle, rgba(195, 194, 194, 1) 62%, rgba(195, 194, 194, 0) 70%);
-    -webkit-mask-image: radial-gradient(circle, rgba(195, 194, 194, 1) 62%, rgba(195, 194, 194, 0) 70%);
 }
 
 .menu_softdrink {
@@ -153,12 +140,117 @@ header p {
     display: none;
 }
 
-#about {
-    background-color: gray;
-    padding: 6vh 4vh;
+#menu {
+    padding-top: 6vh;
+    margin: 0 4vh;
+}
+
+.menu_btn {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vh;
+    margin: 4vh 0;
+}
+
+.menu_btn button {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    padding: 1vh 2vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu_btn button:hover {
+    transform: scale(1.05);
+}
+
+.menu_btn .btn_active {
+    font-weight: bold;
+}
+
+.menu_cafe, 
+.menu_softdrink, 
+.menu_gin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-self: center;
+    gap: 1vh 1vw;
+    padding: 2vh 2vw;
+    max-width: 900px;
+}
+
+.drink {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 2vh;
+    text-align: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 45%;
+    min-width: 300px;
+    height: 40vh;
+    min-height: 280px;
+}
+
+.drink:hover {
+    transform: scale(1.03);
+}
+
+.drink img {
+    width: 80%;
+    max-width: 220px;
+    min-width: 160px;
+    height: 150px;
+    max-height: 60%;
+    margin-bottom: 1vh;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid;
+}
+
+.drink p:first-of-type {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1vh 0 0.5vh 0;
+}
+
+.drink p:nth-of-type(2) {
+    font-size: 0.95rem;
+}
+
+.menu_cafe > p {
+    grid-column: 1 / -1;
+    border-radius: 10px;
+    padding: 2vh;
+    margin: 4vh 0 0 0;
+    line-height: 1.7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.footer_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+#about {
+    margin: 4vh 2vw 6vh 0;
+    padding: 2vh 1vw;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    border-radius: 10px;
+    line-height: 1.7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 #about p {
@@ -166,8 +258,8 @@ header p {
 }
 
 #about img {
-    margin: 3vh auto;
-    width: 80vw;
+    margin: 3vh;
+    width: 80%;
     height: auto;
 }
 
@@ -176,31 +268,190 @@ header p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    justify-self: center;
+    margin: 4vh 0 6vh 2vw;
     padding: 6vh 4vh;
-    background-color: lightgrey;
-}
-
-.opening_time {
-    line-height: 1;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    line-height: 1.7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 #adress button {
     border: 0;
     padding: 1rem;
     border-radius: 5px;
-    color: #b99768;
 }
 
 #adress button:hover {
-    background-color: rgb(195, 194, 194);
-    color: #b99768;
     transform: scale(1.05);
 }
 
-@media only screen and (max-width: 370px) {
+@media (max-width: 740px) {
+
+    .drink {
+        width: 85vw;
+        max-width: 400px;
+        padding: 1vh 2vw;
+        margin: 0 auto;
+    }
+
+    .drink p:first-of-type {
+        font-size: 1rem;
+    }
+
+    .drink p:nth-of-type(2) {
+        font-size: 0.75rem;
+        padding: 0 1vw;
+    }
+
+    .drink:hover {
+        width: 90vw;
+        padding: 3vw;
+    }
+
+    .drink:hover p {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+
+    .menu_btn button {
+        font-size: 1rem;
+        padding: 1vh 1vw;
+        min-width: 80px;
+    }
+
+    .footer_container {
+        flex-direction: column-reverse;
+    }
+
+    #about {
+        width: 85vw;
+        margin: 2vh 0;
+    }
+
+    #adress {
+        max-width: 85vw;
+        margin: 2vh 0;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+
+    .logo {
+        display: none;
+    }
+
+    #opening_status {
+        font-size: 0.8rem;
+    }
+
+    .nav-links {
+        font-size: 0.8rem;
+        gap: 1rem 2rem;
+    }
+
+    header section h1{
+        font-size: 2.5rem;
+    }
+
+    header section p{
+        font-size: 1.2rem;
+    }
+
+    .drink {
+        min-width: none;
+    }
+
+    #adress p {
+        font-size: 0.8rem;
+    }
+}
+
+* {
+    color: #6f4e37;
+}
+
+body {
+    background-color: #f4f1ee;
+    color: #3b2f2f;
+}
+
+.navbar {
+    background-color: #fff7f0;
+}
 
 #opening_status {
-    font-size: 0.8rem;
+    color: #6f4e37;
+    border: 1px solid #a67c52;
 }
-    
+
+#opening_status:hover {
+    background-color: #e5ded4;
+    color: #6f4e37;
+}
+
+#menu {
+    background-color: #f4f1ee;
+    color: #3b2f2f;
+}
+
+.menu_cafe > p {
+    background-color: #fff7f0;
+    color: #3b2f2f;
+}
+
+.drink {
+    background-color: #fff7f0;
+    border: 2px solid #e5c4a1;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+}
+
+.drink p:first-of-type {
+    color: #6f4e37;
+}
+
+.drink p:nth-of-type(2) {
+    color: #5a4b41;
+}
+
+.drink img {
+    border: 3px solid #a67c52;
+}
+
+.menu_btn button {
+    background-color: #f4f1ee;
+    color: #6f4e37;
+    border: 1px solid #a67c52;
+}
+
+.menu_btn button:hover {
+    background-color: #e5ded4;
+    color: #6f4e37;
+}
+
+.menu_btn .btn_active {
+    background-color: #a67c52;
+    color: white;
+}
+
+#about {
+    background-color: #e5ded4;
+    color: #3b2f2f;
+}
+
+#adress {
+    background-color: #fff7f0;
+    color: #3b2f2f;
+}
+
+#adress button {
+    background-color: #a67c52;
+    color: white;
+}
+
+#adress button:hover {
+    background-color: #8a5f3b;
+    color: white;
 }

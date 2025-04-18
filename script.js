@@ -1,4 +1,3 @@
-// Set an initial visible section on page load (optional)
 document.addEventListener('DOMContentLoaded', function () {
     showSection('menu_cafe');  // Show cafe section initially
 });
@@ -10,7 +9,7 @@ function showSection(sectionClass) {
     });
     
     // Show the selected section
-    document.querySelector(`.${sectionClass}`).style.display = 'block';
+    document.querySelector(`.${sectionClass}`).style.display = 'flex';
 }
 
 //active button
@@ -23,14 +22,27 @@ btnElList.forEach(btnEl => {
     })
 });
 
-document.querySelectorAll('.navbar-nav .nav-link').forEach(function (navLink) {
-    navLink.addEventListener('click', function () {
-        var navbarCollapse = document.querySelector('.navbar-collapse');
-        var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-            toggle: false
-        });
-        bsCollapse.hide(); // Close the hamburger menu
-    });
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', function () {
+  // Only apply logic if screen width is 1300px or less
+  if (window.innerWidth <= 1300) {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop === 0) {
+      navbar.classList.remove('hidden');
+    } else if (scrollTop > lastScrollTop) {
+      navbar.classList.add('hidden');
+    } else {
+      navbar.classList.remove('hidden');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  } else {
+    // Reset navbar if screen is wider (just in case)
+    navbar.classList.remove('hidden');
+  }
 });
 
 const openingHours = {
